@@ -7,7 +7,7 @@ const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.y1e7y.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 app.use(express.json(), express.urlencoded({ extended: true }));
 app.use(
-  cors({ credentials: true, origin: `http://localhost:${process.env.ORIGIN}` })
+  cors({ credentials: true, origin: [`http://localhost:${process.env.ORIGIN}`, `https://final-authetication.web.app/app`] })
 );
 
 const client = new MongoClient(uri, {
